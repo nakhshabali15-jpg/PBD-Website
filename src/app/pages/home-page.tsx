@@ -18,7 +18,7 @@ import { Navbar } from "../components/navbar";
 
 export default function HomePage() {
   return (
-    <div className="size-full">
+    <div className="w-full">
       <Navbar />
       <div data-navbar-theme="dark">
         <HeroSection />

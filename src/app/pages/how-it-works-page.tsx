@@ -12,7 +12,7 @@ import { ContactFormSection } from "../components/contact-form-section";
 
 export default function HowItWorksPage() {
   return (
-    <div className="size-full">
+    <div className="w-full">
       <Navbar />
 
       {/* Hero */}
