@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "motion/react";
+import { useRef, useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import applyImage from "figma:asset/7f8e78a0b6f2149e9344f681143d2c8df8e99fbb.png";
 import qualifyImage from "figma:asset/089f3a5b94a579bae9fff7497c84ac1bf812282d.png";
@@ -41,38 +41,50 @@ const steps = [
   },
 ];
 
-// ─── Desktop: sticky scroll-driven version ───────────────────────────────────
+// ─── Desktop: sticky scroll-driven version ────────────────────────────────────
 function ProcessSectionDesktop() {
-  const outerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  // One ref per step sentinel div
+  const sentinelRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const { scrollYProgress } = useScroll({
-    target: outerRef,
-    offset: ["start start", "end end"],
-  });
+  useEffect(() => {
+    // Each sentinel is a full-viewport-height div. When it enters the viewport
+    // (crossing the top 20% threshold) we mark that step as active.
+    const observers: IntersectionObserver[] = [];
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    const index = Math.min(
-      steps.length - 1,
-      Math.floor(latest * steps.length)
-    );
-    setActiveIndex(index);
-  });
+    sentinelRefs.current.forEach((el, index) => {
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveIndex(index);
+          }
+        },
+        {
+          // Fire when the sentinel is 40% visible — feels natural mid-scroll
+          threshold: 0.4,
+        }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
 
   return (
-    // Outer wrapper — tall enough to scroll through all steps
-    <div
-      ref={outerRef}
-      style={{ height: `${steps.length * 100}vh` }}
-      className="relative"
-    >
-      {/* Sticky inner — pins to viewport while user scrolls through outer */}
-      <div className="sticky top-0 h-screen overflow-hidden bg-white flex flex-col justify-center">
-        <div
-          className="max-w-[1440px] mx-auto w-full px-10 lg:px-16"
-          style={{ fontFamily: "'Inter', sans-serif" }}
-        >
-          {/* Section label */}
+    /*
+     * Outer wrapper — 400vh tall so the page has enough scroll room.
+     * position: relative is required so the sticky child has an anchor.
+     */
+    <div className="relative" style={{ height: `${steps.length * 100}vh` }}>
+      {/* ── Sticky UI panel ─────────────────────────────────────────────── */}
+      <div
+        className="sticky top-0 h-screen bg-white flex flex-col justify-center overflow-hidden"
+        style={{ fontFamily: "'Inter', sans-serif" }}
+      >
+        <div className="max-w-[1440px] mx-auto w-full px-10 lg:px-16">
+          {/* Label */}
           <p
             className="text-[#888] uppercase tracking-[0.15em] mb-6"
             style={{ fontSize: "0.7rem", fontWeight: 500 }}
@@ -104,10 +116,10 @@ function ProcessSectionDesktop() {
                     key={step.title}
                     className="border-t border-[#e5e5e5] last:border-b"
                   >
-                    {/* Step row */}
                     <div className="flex items-start gap-3 py-5">
+                      {/* Red / grey dot */}
                       <span
-                        className="mt-[7px] w-[6px] h-[6px] shrink-0 rounded-[0px] transition-colors duration-300"
+                        className="mt-[7px] w-[6px] h-[6px] shrink-0 transition-colors duration-300"
                         style={{
                           backgroundColor: isActive ? "#ea1528" : "#ccc",
                         }}
@@ -133,7 +145,7 @@ function ProcessSectionDesktop() {
                           {step.title}
                         </span>
 
-                        {/* Description + tags — fade in when active */}
+                        {/* Description + tags — expand/collapse with active step */}
                         <motion.div
                           animate={{
                             opacity: isActive ? 1 : 0,
@@ -175,7 +187,7 @@ function ProcessSectionDesktop() {
               })}
             </div>
 
-            {/* Right: sticky image frame — frame stays, image crossfades */}
+            {/* Right: image frame — frame fixed, image crossfades */}
             <div className="relative overflow-hidden aspect-[4/3]">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -183,7 +195,7 @@ function ProcessSectionDesktop() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  transition={{ duration: 0.45, ease: "easeInOut" }}
                   className="absolute inset-0"
                 >
                   <ImageWithFallback
@@ -197,11 +209,28 @@ function ProcessSectionDesktop() {
           </div>
         </div>
       </div>
+
+      {/* ── Invisible sentinel divs — one per step ──────────────────────── */}
+      {/*
+       * These are stacked on top of the sticky panel (pointer-events-none so
+       * they don't block clicks). As each one scrolls into view, the
+       * IntersectionObserver fires and updates activeIndex.
+       */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
+        {steps.map((_, index) => (
+          <div
+            key={index}
+            ref={(el) => { sentinelRefs.current[index] = el; }}
+            style={{ height: "100vh", top: `${index * 100}vh` }}
+            className="absolute w-full"
+          />
+        ))}
+      </div>
     </div>
   );
 }
 
-// ─── Mobile: click-driven accordion version (unchanged) ──────────────────────
+// ─── Mobile: click-driven accordion (unchanged) ───────────────────────────────
 function ProcessSectionMobile() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeStep = steps[activeIndex >= 0 ? activeIndex : 0];
@@ -280,7 +309,9 @@ function ProcessSectionMobile() {
                       lineHeight: 1.4,
                     }}
                   >
-                    <span className={`mr-2 ${isActive ? "text-[#111642]" : "text-[#888]"}`}>
+                    <span
+                      className={`mr-2 ${isActive ? "text-[#111642]" : "text-[#888]"}`}
+                    >
                       {step.step}.
                     </span>
                     {step.title}
@@ -335,16 +366,13 @@ function ProcessSectionMobile() {
   );
 }
 
-// ─── Main export — renders the right version per breakpoint ──────────────────
+// ─── Main export ──────────────────────────────────────────────────────────────
 export function ProgramsProcessSection() {
   return (
     <>
-      {/* Desktop: scroll-driven sticky */}
       <div className="hidden lg:block">
         <ProcessSectionDesktop />
       </div>
-
-      {/* Mobile/tablet: click-driven accordion */}
       <div className="lg:hidden">
         <ProcessSectionMobile />
       </div>

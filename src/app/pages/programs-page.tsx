@@ -11,7 +11,7 @@ import { ContactFormSection } from "../components/contact-form-section";
 
 export default function ProgramsPage() {
   return (
-    <div className="size-full">
+    <div className="w-full">
       <Navbar />
       <ProgramsHero />
       <ProgramsProcessSection />
