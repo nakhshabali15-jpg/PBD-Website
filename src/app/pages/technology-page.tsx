@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import { Navbar } from "../components/navbar";
 import { FooterSection } from "../components/footer-section";
-import { CTASection } from "../components/cta-section";
+
 import { ContactFormSection } from "../components/contact-form-section";
 
 // ─── 1. Hero ──────────────────────────────────────────────────────────────────
@@ -979,9 +979,6 @@ export default function TechnologyPage() {
       <ElectronicDataSection />
       <ScanAlyticsSection />
       <SupportingNetworkSection />
-      <div data-navbar-theme="dark" className="relative">
-        <CTASection />
-      </div>
       <ContactFormSection />
       <div data-navbar-theme="dark" className="relative">
         <FooterSection />

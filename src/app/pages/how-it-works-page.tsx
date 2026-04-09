@@ -7,7 +7,7 @@ import { HowProgramsWorkSection } from "../components/how-programs-work-section"
 import { VendorRebatesSection } from "../components/vendor-rebates-section";
 import { RebateStatementSection } from "../components/rebate-statement-section";
 import { ProvenPerformanceSection } from "../components/proven-performance-section";
-import { CTASection } from "../components/cta-section";
+
 import { ContactFormSection } from "../components/contact-form-section";
 
 export default function HowItWorksPage() {
@@ -39,10 +39,6 @@ export default function HowItWorksPage() {
 
       <div data-navbar-theme="dark">
         <ProvenPerformanceSection />
-      </div>
-
-      <div data-navbar-theme="dark" className="relative">
-        <CTASection />
       </div>
 
       <ContactFormSection />

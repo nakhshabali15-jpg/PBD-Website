@@ -160,19 +160,6 @@ export function HeroSection() {
                 A national retail network for independent operators
               </h1>
 
-              {/* Subtitle */}
-              <p
-                className="text-[#A3A3A3]"
-                style={{
-                  fontSize: "16px",
-                  fontWeight: 400,
-                  lineHeight: "22px",
-                  letterSpacing: "-0.8px",
-                  width: "606px",
-                }}
-              >
-                Helping independent convenience stores, gas stations, and truck stops operate with the programs, funding, and support typically reserved for large chains.
-              </p>
             </div>
 
             {/* CTA Button */}
@@ -216,7 +203,7 @@ export function HeroSection() {
               letterSpacing: "-0.8px",
             }}
           >
-            Giving independent C-store owners the marketing support that national chains rely on, at no cost.
+            Helping independent convenience stores, gas stations, and truck stops operate with the programs, funding, and support typically reserved for large chains.
           </p>
         </div>
 

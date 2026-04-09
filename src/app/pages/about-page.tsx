@@ -6,7 +6,7 @@ import { AboutTimelineSection } from "../components/about-timeline-section";
 import { WhoWeServeSection } from "../components/who-we-serve-section";
 import { ForRetailersAboutSection } from "../components/for-retailers-about-section";
 import { AboutRoiSection } from "../components/about-roi-section";
-import { CTASection } from "../components/cta-section";
+
 import { ContactFormSection } from "../components/contact-form-section";
 import { TrustedNumbers, aboutStats } from "../components/trusted-numbers";
 
@@ -25,9 +25,6 @@ export default function AboutPage() {
       </div>
       <ForRetailersAboutSection />
       <AboutRoiSection />
-      <div data-navbar-theme="dark" className="relative">
-        <CTASection />
-      </div>
       <ContactFormSection />
       <div data-navbar-theme="dark" className="relative">
         <FooterSection />

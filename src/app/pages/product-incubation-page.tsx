@@ -5,7 +5,7 @@ import { FooterSection } from "../components/footer-section";
 import { ServicesSection } from "../components/services-section";
 import { ResultsSection } from "../components/results-section";
 import { ProvenPerformanceSection } from "../components/proven-performance-section";
-import { CTASection } from "../components/cta-section";
+
 import { ContactFormSection } from "../components/contact-form-section";
 
 function ProductIncubationHero() {
@@ -129,9 +129,6 @@ export default function ProductIncubationPage() {
       <ResultsSection />
       <div data-navbar-theme="dark">
         <ProvenPerformanceSection />
-      </div>
-      <div data-navbar-theme="dark" className="relative">
-        <CTASection />
       </div>
       <ContactFormSection />
       <div data-navbar-theme="dark">

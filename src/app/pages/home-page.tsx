@@ -9,7 +9,7 @@ import { ResultsSection } from "../components/results-section";
 import { ProvenPerformanceSection } from "../components/proven-performance-section";
 import { LogoCloudSection } from "../components/logo-cloud-section";
 import { WhyChooseSection } from "../components/why-choose-section";
-import { CTASection } from "../components/cta-section";
+
 import { TestimonialsSection } from "../components/testimonials-section";
 import { FAQSection } from "../components/faq-section";
 import { ContactFormSection } from "../components/contact-form-section";
@@ -39,9 +39,6 @@ export default function HomePage() {
       </div>
       <TestimonialsSection />
       <FAQSection />
-      <div data-navbar-theme="dark">
-        <CTASection />
-      </div>
       <ContactFormSection />
       <div data-navbar-theme="dark">
         <FooterSection />

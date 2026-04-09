@@ -6,7 +6,8 @@ import { JumpstartProgramSection } from "../components/jumpstart-program-section
 import { ProgramsResultsSection } from "../components/programs-results-section";
 import { WhatMembersReceiveSection } from "../components/what-members-receive-section";
 import { OurModelSection } from "../components/our-model-section";
-import { CTASection } from "../components/cta-section";
+import { CoreProgramsSection } from "../components/core-programs-section";
+
 import { ContactFormSection } from "../components/contact-form-section";
 
 export default function ProgramsPage() {
@@ -14,14 +15,12 @@ export default function ProgramsPage() {
     <div className="w-full">
       <Navbar />
       <ProgramsHero />
+      <CoreProgramsSection />
       <ProgramsProcessSection />
       <JumpstartProgramSection />
       <ProgramsResultsSection />
       <WhatMembersReceiveSection />
       <OurModelSection />
-      <div data-navbar-theme="dark" className="relative">
-        <CTASection />
-      </div>
       <ContactFormSection />
       <div data-navbar-theme="dark" className="relative">
         <FooterSection />
