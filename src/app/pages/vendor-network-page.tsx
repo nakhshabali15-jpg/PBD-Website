@@ -61,7 +61,7 @@ function VendorNetworkHero() {
                 letterSpacing: "-0.03em",
               }}
             >
-              Built on Long-Term Vendor Partnerships.
+              Built on decades of vendor relationships that drive real results
             </h1>
           </motion.div>
 
@@ -80,9 +80,7 @@ function VendorNetworkHero() {
                 lineHeight: 1.6,
               }}
             >
-              PBD's vendor network wasn't built overnight. It was forged over
-              three decades of working alongside the biggest brands and
-              distributors in convenience retail.
+              PBD's network is built on long-standing relationships with national vendors and distributors, allowing independent retailers to access programs, pricing, and funding typically reserved for large chains.
             </p>
           </motion.div>
         </div>

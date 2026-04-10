@@ -9,29 +9,24 @@ import consultancyImage from "figma:asset/17e7a379335502592f4c15274741b1e4222700
 
 const steps = [
   {
-    title: "Capital investment",
-    description: "PBD funds the store reset and program activation at no cost to you.",
-    image: capitalInvestmentImage,
-  },
-  {
-    title: "Store evaluation",
+    title: "Store Evaluation",
     description: "We identify gaps in your product mix, layout, and vendor coverage.",
     image: storeEvaluationImage,
   },
   {
-    title: "Category resets",
-    description: "Optimizing shelf space, product placement, and overall store flow.",
-    image: categoryResetsImage,
-  },
-  {
-    title: "Vendor activation",
-    description: "Connecting your store to qualifying national vendor programs.",
+    title: "Vendor Activation",
+    description: "Connect your store to qualifying national vendor programs.",
     image: vendorActivationImage,
   },
   {
-    title: "Hands-on consultancy",
-    description: "The PBD team works in your store during the transition.",
-    image: consultancyImage,
+    title: "Category Resets",
+    description: "Optimize shelf space, product placement, and overall store flow.",
+    image: categoryResetsImage,
+  },
+  {
+    title: "Store Investment & Support",
+    description: "PBD funds your store reset and aggressive promotional activity designed to drive traffic and reintroduce your store to customers. Our team works directly in your store during the transition to ensure everything is properly implemented.",
+    image: capitalInvestmentImage,
   },
 ];
 

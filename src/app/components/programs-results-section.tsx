@@ -73,9 +73,7 @@ export function ProgramsResultsSection() {
                 lineHeight: 1.7,
               }}
             >
-              PBD connects independent gas stations, convenience stores, and
-              truck stops with national vendor programs, merchandising support,
-              and promotional funding typically reserved for large chains.
+              Performance driven by program execution, category resets, and consistent participation across vendor programs.
             </p>
 
             {/* Stats Grid */}
@@ -106,7 +104,7 @@ export function ProgramsResultsSection() {
                     lineHeight: 1.6,
                   }}
                 >
-                  Increase in sales during Jumpstart
+                  Average increase in sales during<br />Jumpstart
                 </p>
               </motion.div>
 
@@ -126,7 +124,7 @@ export function ProgramsResultsSection() {
                     letterSpacing: "-0.03em",
                   }}
                 >
-                  2X
+                  2X–3X
                 </p>
                 <p
                   className="text-[#d4d4d4]"
@@ -136,7 +134,7 @@ export function ProgramsResultsSection() {
                     lineHeight: 1.6,
                   }}
                 >
-                  Your annual sales
+                  Annual sales growth potential with full program execution
                 </p>
               </motion.div>
             </div>

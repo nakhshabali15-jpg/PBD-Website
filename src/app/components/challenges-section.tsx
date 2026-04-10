@@ -218,18 +218,17 @@ export function ChallengesSection() {
           <div className="flex flex-col sm:flex-row gap-0 sm:gap-[56px] items-start">
             <ChallengeCard
               icon="1"
-              title="Lack of national-level pricing or rebates"
-              bodyRegular="Individual owners can't unlock the vendor programs and promotions that chains get automatically, "
-              bodyItalic="the gap in margin is real."
-              solution="PBD unlocks chain-level contracts for your store"
+              title="Pricing and rebate disadvantage"
+              bodyRegular="Independent stores don't have access to national pricing, rebates, or promotional programs"
+              solution="PBD connects your store to national programs typically reserved for chains"
               delay={0.1}
               isInView={isInView}
             />
             <ChallengeCard
               icon="3"
-              title="POS, signage, inside looks are slow or static"
-              bodyRegular="Chains refresh their stores constantly. Without a partner funding it, independents fall further behind every quarter."
-              solution="PBD plans, procures & installs — turnkey"
+              title="No structured execution"
+              bodyRegular="There's no consistent plan for resets, promotions, or category management. Changes happen, but not in a coordinated way that drives performance."
+              solution="PBD brings structure to execution for program rollout across your store"
               delay={0.18}
               isInView={isInView}
             />
@@ -242,17 +241,17 @@ export function ChallengesSection() {
           <div className="flex flex-col sm:flex-row gap-0 sm:gap-[56px] items-start">
             <ChallengeCard
               icon="2"
-              title="Interiors aging, losing loyal customers across the street?"
-              bodyRegular="A dated store sends the wrong message. Customers notice when the chain nearby runs promos you can't match."
-              solution="Reset plans & promo signage drive sales back in-store"
+              title="Store falls behind competition"
+              bodyRegular="Chains constantly update signage, promotions, and category presentation. Independent stores fall behind, and customers notice."
+              solution="PBD aligns your store with current programs, that drives customer engagement and sales"
               delay={0.26}
               isInView={isInView}
             />
             <ChallengeCard
               icon="1"
-              title="Build-out help is inconsistent or costly"
-              bodyRegular="You shouldn't have to fund store improvements out of pocket. Vendor dollars exist for this — most owners just can't access them alone."
-              solution="Exclusive vendor funding, 100% at no cost to you"
+              title="No access to vendor-driven volume"
+              bodyRegular="Independent stores are not connected to vendor-funded programs that drive volume, promotions, and product movement at the store level."
+              solution="PBD connects your store to vendor-funded programs"
               delay={0.34}
               isInView={isInView}
             />

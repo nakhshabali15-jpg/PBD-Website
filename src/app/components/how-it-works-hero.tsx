@@ -33,7 +33,7 @@ export function HowItWorksHero() {
                 lineHeight: 1.05,
                 letterSpacing: "-0.03em",
               }}
-            >From application to monthly rebates.</h1>
+            >From application to a fully executed store.</h1>
           </motion.div>
 
           {/* Description - right */}
@@ -51,7 +51,7 @@ export function HowItWorksHero() {
                 lineHeight: 1.6,
               }}
             >
-              PBD connects independent retailers with national vendor programs that generate rebates and promotional funding.
+              PBD manages the entire process from setup to execution, connecting your store to vendor programs, funding, and ongoing support.
             </p>
           </motion.div>
         </div>

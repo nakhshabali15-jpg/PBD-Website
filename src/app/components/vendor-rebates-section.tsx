@@ -7,45 +7,33 @@ const storeImage = "https://www.figma.com/api/mcp/asset/c8141e6d-977d-4298-89f4-
 const phases = [
   {
     label: "FIRST 30 DAYS",
-    title: "You sell qualifying products",
+    title: "Align",
     bullets: [
-      "Migrating pricing to national programs",
-      "Tracking volume baselines",
-      "Accruing rebate payments by participation level",
-      "Setting up scan data & loyalty reporting",
+      "Establish pricing, activate vendor programs, and begin building participation across key categories.",
     ],
     image: storeImage,
   },
   {
     label: "NEXT 30 DAYS",
-    title: "Assess & Order",
+    title: "Prepare",
     bullets: [
-      "Onsite assessment by PBD consultant",
-      "Competitive pricing environment analysis",
-      "Equipment ordering and installation",
-      "Vendor program confirmation",
+      "Evaluate your store, confirm vendor programs, and coordinate equipment, layout, and implementation plans.",
     ],
     image: storeImage,
   },
   {
     label: "NEXT 30 DAYS",
-    title: "Reset & Implement",
+    title: "Execute",
     bullets: [
-      "Hands-on consulting in your store",
-      "Full category implementation",
-      "Store reset — beverage, tobacco, snacks, GM",
-      "Promotional signage installed",
+      "Complete full category resets, implement planograms, and install promotional signage across the store.",
     ],
     image: storeImage,
   },
   {
-    label: "WHATS NEXT",
-    title: "Drive & Retrain",
+    label: "FINAL PHASE",
+    title: "Drive Results",
     bullets: [
-      "Aggressive promotions go live",
-      "Deals designed to retrain customer behavior",
-      "Drive new foot traffic through vendor campaigns",
-      "Monthly rebate payments begin",
+      "Promotions go live, vendor programs are fully active, and your store begins generating traffic, sales, and rebate income.",
     ],
     image: storeImage,
   },
@@ -188,19 +176,16 @@ export function VendorRebatesSection() {
                       >
                         {phase.title}
                       </h3>
-                      <ul
-                        className="list-disc"
+                      <p
                         style={{
                           fontSize: "14px",
                           fontWeight: 400,
                           color: "#737373",
-                          paddingLeft: "21px",
+                          lineHeight: "26.4px",
                         }}
                       >
-                        {phase.bullets.map((b) => (
-                          <li key={b} style={{ lineHeight: "26.4px" }}>{b}</li>
-                        ))}
-                      </ul>
+                        {phase.bullets[0]}
+                      </p>
                     </motion.div>
                   );
                 })}

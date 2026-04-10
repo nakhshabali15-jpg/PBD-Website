@@ -166,7 +166,7 @@ export function BeforeAfterSection() {
                   maxWidth: "469px",
                 }}
               >
-                Full backbar reset, national contracts activated, promotional signage installed — all at no cost.
+                National contracts activated and promotional signage installed — all at no cost.
               </p>
             </div>
           </motion.div>

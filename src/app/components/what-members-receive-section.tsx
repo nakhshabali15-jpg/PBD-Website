@@ -11,37 +11,37 @@ import dedicatedSupportImage from "figma:asset/fac15b34fe20320dab4651c9c5cd0f284
 
 const benefits = [
   {
-    title: "Vendor rebate programs",
+    title: "Vendor Rebate Programs",
     description:
-      "Earn monthly rebates from national brands based on qualifying product sales in your store.",
+      "Earn monthly rebates from national brands based on qualifying product sales.",
     image: vendorRebateImage,
   },
   {
-    title: "Promotional funding",
+    title: "Promotional Funding",
     description:
-      "Access vendor-funded campaigns that drive foot traffic and increase basket size.",
+      "Access vendor-funded campaigns that drive traffic and increase basket size.",
     image: promotionalFundingImage,
   },
   {
-    title: "Category management",
+    title: "Category Management",
     description:
-      "Data-driven guidance on product mix, shelf placement, and category performance.",
+      "Optimize product mix, pricing, and shelf placement to improve performance.",
     image: categoryManagementImage,
   },
   {
-    title: "Merchandising support",
+    title: "Merchandising Support",
     description:
       "Hands-on help with store layout, planograms, and product positioning.",
     image: merchandisingSupportImage,
   },
   {
-    title: "Distributor promotions",
+    title: "Distributor Programs",
     description:
-      "Participate in distributor-supported deals and pricing programs across key categories.",
+      "Participate in distributor-backed promotions and pricing across key categories.",
     image: distributorPromotionsImage,
   },
   {
-    title: "Dedicated support",
+    title: "Dedicated Support",
     description:
       "PBD coordinates everything — from program activation to tracking and payment distribution.",
     image: dedicatedSupportImage,
@@ -133,7 +133,7 @@ export function WhatMembersReceiveSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
         >
-          Once you're in the PBD network, here's what you get access to:
+          All managed through one coordinated program designed to improve performance, simplify operations, and drive consistent results.
         </motion.p>
 
         {/* Scrollable Cards Container with Gradient Fades */}
