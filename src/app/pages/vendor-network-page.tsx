@@ -259,19 +259,13 @@ function PartnershipStorySection() {
                 className="text-[#525252]"
                 style={{ fontSize: "16px", fontWeight: 400, lineHeight: 1.6 }}
               >
-                In the early 1990s, PBD entered into a strategic distribution
-                agreement with Core-Mark during a pivotal period in the
-                company's history. The agreement helped Core-Mark restructure
-                and reposition its business within the convenience retail
-                industry.
+                In the early 1990s, PBD entered into a strategic relationship with Core-Mark during a pivotal period in the company's history, helping support its restructuring and repositioning within the convenience retail industry.
               </p>
               <p
                 className="text-[#525252]"
                 style={{ fontSize: "16px", fontWeight: 400, lineHeight: 1.6 }}
               >
-                In the years that followed, Core-Mark grew into one of the
-                largest convenience retail distributors in the United States.
-                The partnership with PBD continues today.
+                Today, Core-Mark is one of the largest convenience distributors in the United States, and the partnership with PBD continues.
               </p>
             </div>
 
@@ -285,9 +279,7 @@ function PartnershipStorySection() {
                   lineHeight: 1.75,
                 }}
               >
-                This wasn't a vendor listing or a logo on a website. PBD
-                played an active role in helping shape the trajectory of one
-                of the industry's most important distribution companies.
+                This wasn't a passive relationship. PBD played an active role in supporting one of the industry's most important distribution companies.
               </p>
             </div>
           </div>
@@ -300,60 +292,67 @@ function PartnershipStorySection() {
 // ─── 4. Vendor Timeline — horizontal scroll on vertical input ─────────────────
 const timelineItems = [
   {
-    year: "1990",
-    brand: "Balance Bar",
-    body: "PBD supported Balance Bar's entry into convenience retail before the energy bar category reached mainstream scale — helping introduce a new snacking format to a channel more familiar with candy bars.",
-    img: tlBalanceBar,
-    imgAlt: "Balance Bar logo",
-  },
-  {
     year: "1994",
     brand: "Convenience Valet",
-    body: "PBD helped launch Convenience Valet across its independent retail network, bringing a curated over-the-counter health and personal care assortment to c-stores at a price point designed for the channel.",
+    body: "Helped launch and scale a curated health and personal care program across independent retailers, proving the concept in key Western markets and supporting national expansion.",
     img: tlConvenienceValet,
     imgAlt: "Convenience Valet logo",
   },
   {
     year: "1996",
+    brand: "Balance Bar",
+    body: "Recognized early potential in convenience and supported packaging, pricing, merchandising, and distribution strategy to successfully introduce the category to the channel.",
+    img: tlBalanceBar,
+    imgAlt: "Balance Bar logo",
+  },
+  {
+    year: "1996",
     brand: "FIJI Water",
-    body: "PBD supported the early introduction of FIJI Water into convenience retail, including the launch of a half-liter bottle designed specifically for the channel. FIJI later became one of the most recognised premium water brands in the world.",
+    body: "Supported a relaunch into convenience with a new package size and value price point, helping validate the product and drive national rollout.",
     img: tlFijiWater,
     imgAlt: "FIJI Water logo",
   },
   {
-    year: "Late 1990s",
+    year: "1998",
     brand: "Monster Energy",
-    body: "PBD identified Monster early and helped introduce the brand into convenience retail through its network of stores. Monster Energy went on to become one of the most successful beverage brands in the industry.",
+    body: "We identified it early and helped get it into stores and grow before the energy category reached scale, becoming the first chain to put Monster on the shelf west of the Mississippi.",
     img: tlMonster,
     imgAlt: "Monster Energy logo",
   },
   {
-    year: "Late 1990s",
+    year: "1998",
     brand: "General Mills",
-    body: "PBD supported the launch of General Mills' first convenience-focused product line, introducing it across hundreds of independent retail locations.",
+    body: "Helped bring General Mills' convenience-focused product line into market across member stores, supporting early adoption in key regions.",
     img: tlGeneralMills,
     imgAlt: "General Mills logo",
   },
   {
-    year: "2003",
-    brand: "7Up Value Strategy",
-    body: "PBD worked with 7Up to introduce a value-priced 20oz strategy designed to increase trial and drive higher sales velocity in convenience retail.",
-    img: tl7Up,
-    imgAlt: "7Up logo",
-  },
-  {
-    year: "Early 2000s",
+    year: "2000",
     brand: "Tobacco Backbar",
-    body: "PBD developed and deployed one of the first large-scale tobacco backbar merchandising systems, replacing overhead cigarette racks and improving product visibility. This format later became an industry standard.",
+    body: "Developed and deployed large-scale tobacco backbar programs, introducing new merchandising standards and improving product visibility and pricing structure.",
     img: tlTobaccoBackbar,
     imgAlt: "Tobacco backbar logo",
   },
   {
-    year: "Mid-2000s",
+    year: "2003",
+    brand: "7Up Value Strategy",
+    body: "Advised on product positioning and value pricing strategy, becoming one of the first networks to distribute the new package size in convenience.",
+    img: tl7Up,
+    imgAlt: "7Up logo",
+  },
+  {
+    year: "2005",
     brand: "Venom Energy",
-    body: "PBD supported the launch of Venom Energy as a value-focused energy drink for the convenience channel. The product gained strong traction with independent retailers.",
+    body: "Helped position and validate a value-driven energy product in convenience, supporting early distribution and category expansion.",
     img: tlVenomEnergy,
     imgAlt: "Venom Energy logo",
+  },
+  {
+    year: "2006",
+    brand: "Juul",
+    body: "Supported early proof-of-concept in convenience through store-level execution, display strategy, and targeted distribution.",
+    img: "https://www.figma.com/api/mcp/asset/7180e94d-8361-4c82-9442-1d41eae3eb0b",
+    imgAlt: "Juul logo",
   },
 ];
 
@@ -442,7 +441,7 @@ function VendorTimelineSection() {
                 animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                Three decades of helping brands<br />break into convenience retail.
+                Helping brands grow in convenience retail for over 30 years
               </motion.h2>
               <motion.p
                 className="text-[#aaa] shrink-0 hidden lg:block"
@@ -454,6 +453,15 @@ function VendorTimelineSection() {
                 Scroll to explore →
               </motion.p>
             </div>
+            <motion.p
+              className="text-[#555] max-w-[640px] mt-4"
+              style={{ fontSize: "16px", fontWeight: 400, lineHeight: 1.6 }}
+              initial={{ opacity: 0, y: 16 }}
+              animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.55, delay: 0.3, ease: "easeOut" }}
+            >
+              PBD has worked alongside emerging and established brands to introduce, position, and scale products within the convenience channel, long before many categories reached mainstream adoption.
+            </motion.p>
           </div>
         </div>
 
@@ -546,23 +554,23 @@ function VendorTimelineSection() {
 const whyItems = [
   {
     title: "Network Access",
-    body: "Access a coordinated network of independent c-stores, gas stations, and truck stops across 20+ states. One partnership gives you distribution across hundreds of locations — without managing each store relationship individually.",
+    body: "Access a coordinated network of independent c-stores, gas stations, and truck stops across 20+ states through a single relationship.",
     tags: ["20+ states", "300+ Locations", "Single Point of Contact"],
     stat: "20+",
     statLabel: "States covered",
     img: whyImg0,
   },
   {
-    title: "Execute Programs",
-    body: "PBD doesn't just list programs — we execute them at store level. Category resets, merchandising implementation, and promotional activation are managed hands-on. Your programs actually run.",
+    title: "Program Execution",
+    body: "Ensure pricing, promotions, and merchandising are implemented consistently across hundreds of locations.",
     tags: ["Category Resets", "In-Store Activation", "Planogram Compliance"],
     stat: "100+",
     statLabel: "Locations across the United States",
     img: whyImg1,
   },
   {
-    title: "Program Accountability",
-    body: "PBD's technology platform tracks program participation, reconciles distributor data, and provides transparent reporting on performance across the network. No guesswork — verified sell-through.",
+    title: "Performance and Accountability",
+    body: "Track participation, measure results, and improve program effectiveness across the network.",
     tags: ["Distributor Data", "Program Tracking", "Transparent Reporting"],
     stat: "100%",
     statLabel: "Transparent reporting",
@@ -570,7 +578,7 @@ const whyItems = [
   },
   {
     title: "Growth Partnership",
-    body: "From launching new products to testing merchandising strategies — PBD has helped brands like Monster, FIJI, and Balance Bar establish themselves in convenience retail. We're not a middleman; we're a launch partner.",
+    body: "Work with a partner focused on driving volume, expanding distribution, and improving long-term performance.",
     tags: ["Product Launches", "Brand Strategy", "Long-Term Relationships"],
     stat: "30+",
     statLabel: "Years of brand launches",
@@ -626,9 +634,7 @@ function WhyVendorsSection() {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              Independent convenience stores and truck stops represent a massive
-              market, but it's fragmented, hard to coordinate, and nearly
-              impossible to activate at scale without a network. PBD solves that.
+              Independent convenience is fragmented, difficult to coordinate, and nearly impossible to activate at scale without a structured network. PBD solves that.
             </motion.p>
           </div>
         </div>
@@ -749,10 +755,10 @@ function WhyVendorsSection() {
 const retailersImg = "https://www.figma.com/api/mcp/asset/eaffff43-17eb-4fe9-80af-d0ef97b2997d";
 
 const retailerBullets = [
-  "National vendor promotional programs backed by brands that trust PBD",
-  "Vendor rebate opportunities tied to real product performance",
-  "Category management informed by decades of retail data",
-  "Merchandising programs developed alongside the brands themselves",
+  "Access to national vendor programs backed by trusted brands",
+  "Rebate opportunities tied to real product performance",
+  "Category management built on real retail experience",
+  "Merchandising programs developed with vendor partners",
 ];
 
 function ForRetailersSection() {
@@ -802,10 +808,7 @@ function ForRetailersSection() {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              Every vendor relationship in the PBD network was built through
-              years of real collaboration. These aren't cold partnerships.
-              They're the reason PBD members get access to programs that
-              independent stores can't access on their own.
+              Every vendor relationship in the PBD network was built through years of real collaboration. These relationships give PBD members access to programs, pricing, and funding that independent stores can't access on their own.
             </motion.p>
           </div>
         </div>
@@ -934,14 +937,8 @@ function CTABannerSection() {
               maxWidth: "540px",
             }}
           >
-            Join the PBD network and start earning vendor rebates.
+            Join the PBD network and start accessing vendor programs, pricing, and rebates.
           </h3>
-          <p
-            className="text-white/80"
-            style={{ fontSize: "16px", fontWeight: 400, lineHeight: 1.5, maxWidth: "580px" }}
-          >
-            Apply to become a member and get access to national vendor programs
-          </p>
         </div>
 
         <Link
@@ -977,7 +974,7 @@ function CTABannerSection() {
             maxWidth: "480px",
           }}
         >
-          Partner with PBD to reach independent retailers at scale.
+          Partner with PBD to reach independent retailers <br />at scale.
         </h3>
 
         <Link
@@ -999,7 +996,7 @@ export default function VendorNetworkPage() {
     <div className="size-full">
       <Navbar />
       <VendorNetworkHero />
-      <VendorStatsSection />
+      {/* VendorStatsSection hidden for this page */}
       <PartnershipStorySection />
       <VendorTimelineSection />
       <WhyVendorsSection />

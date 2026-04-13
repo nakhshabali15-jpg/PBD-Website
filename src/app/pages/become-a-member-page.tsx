@@ -84,7 +84,7 @@ function MemberHeroForm() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                BECOME A MEMBER
+                Join the PBD Network
               </motion.p>
               <motion.h1
                 className="text-white"
@@ -99,7 +99,7 @@ function MemberHeroForm() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                A retail network built for independent convenience stores.
+                Get access to national vendor programs, designed to grow your store.
               </motion.h1>
             </div>
 
@@ -111,9 +111,9 @@ function MemberHeroForm() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               {[
-                "Monthly rebate statements with full program breakdown",
-                "Dedicated support and merchandising team",
-                "Access to programs not available to independent stores",
+                "No membership fees.",
+                "No royalties.",
+                "We'll walk you through everything.",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-[12px]">
                   <CheckCircle size={14} className="text-[#EA1528] shrink-0 mt-[3px]" strokeWidth={1.5} />
@@ -125,44 +125,12 @@ function MemberHeroForm() {
             </motion.div>
           </div>
 
-          {/* Bottom: Email + Phone contact info */}
-          <motion.div
-            className="flex gap-[24px]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-          >
-            <div className="flex flex-col gap-[6px]">
-              <p className="text-[#555] uppercase tracking-[1.2px]" style={{ fontSize: "12px", fontWeight: 500 }}>
-                Email
-              </p>
-              <a
-                href="mailto:join@powerbuyingdealers.com"
-                className="text-white hover:text-[#EA1528] transition-colors"
-                style={{ fontSize: "14px", fontWeight: 400, lineHeight: "19.5px" }}
-              >
-                join@powerbuyingdealers.com
-              </a>
-            </div>
-            <div className="flex flex-col gap-[6px]">
-              <p className="text-[#555] uppercase tracking-[1.2px]" style={{ fontSize: "12px", fontWeight: 500 }}>
-                Number
-              </p>
-              <a
-                href="tel:+13102129999"
-                className="text-white hover:text-[#EA1528] transition-colors"
-                style={{ fontSize: "14px", fontWeight: 400, lineHeight: "19.5px" }}
-              >
-                +1 (310) 212-9999
-              </a>
-            </div>
-          </motion.div>
         </div>
       </div>
 
       {/* ── RIGHT: White form panel ── */}
       <div
-        className="bg-white flex flex-col justify-center px-6 py-12 md:px-12 md:py-16 lg:px-[64px] lg:pr-[80px] lg:py-[143px]"
+        className="bg-white flex flex-col justify-center px-6 py-12 md:px-12 md:py-16 lg:px-[64px] lg:py-[143px]"
         style={{ minHeight: "849px" }}
       >
         {submitted ? (
@@ -192,57 +160,62 @@ function MemberHeroForm() {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             style={{ paddingTop: "36px" }}
           >
+            <p className="text-[#999] mb-6" style={{ fontSize: "13px", fontWeight: 400, lineHeight: 1.5 }}>
+              Quick application. Takes less than a minute.
+            </p>
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <Field label="Name">
-                  <input type="text" id="name" name="name" value={form.name} onChange={handleChange}
-                    placeholder="Full name" required autoComplete="name" className={inputCls} style={inputSty} />
-                </Field>
-                <Field label="Email">
-                  <input type="email" id="email" name="email" value={form.email} onChange={handleChange}
-                    placeholder="you@example.com" required autoComplete="email" className={inputCls} style={inputSty} />
-                </Field>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <Field label="Phone">
-                  <input type="tel" id="contact" name="contact" value={form.contact} onChange={handleChange}
-                    placeholder="(000) 000-0000" required autoComplete="tel" className={inputCls} style={inputSty} />
-                </Field>
-                <Field label="Store Location">
-                  <input type="text" id="storeLocation" name="storeLocation" value={form.storeLocation} onChange={handleChange}
-                    placeholder="City, State" required autoComplete="address-level2" className={inputCls} style={inputSty} />
-                </Field>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <Field label="No. of Stores">
-                  <select id="noOfStores" name="noOfStores" value={form.noOfStores} onChange={handleChange}
-                    required className={selectCls} style={selectSty}>
-                    <option value="" disabled>Select</option>
-                    {storeCountOptions.map((o) => <option key={o} value={o}>{o}</option>)}
-                  </select>
-                </Field>
-                <Field label="Primary Distributor">
-                  <input type="text" id="primaryDistributor" name="primaryDistributor" value={form.primaryDistributor} onChange={handleChange}
-                    placeholder="e.g. Core-Mark, McLane" required autoComplete="off" className={inputCls} style={inputSty} />
-                </Field>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <Field label="Store Sales Area">
-                  <select id="storeSalesArea" name="storeSalesArea" value={form.storeSalesArea} onChange={handleChange}
-                    required className={selectCls} style={selectSty}>
-                    <option value="" disabled>Select</option>
-                    {salesAreaOptions.map((o) => <option key={o} value={o}>{o}</option>)}
-                  </select>
-                </Field>
-                <Field label="Fuel Brand / Unbranded">
-                  <select id="fuelBrand" name="fuelBrand" value={form.fuelBrand} onChange={handleChange}
-                    required className={selectCls} style={selectSty}>
-                    <option value="" disabled>Select</option>
-                    {fuelOptions.map((o) => <option key={o} value={o}>{o}</option>)}
-                  </select>
-                </Field>
-              </div>
-              <div className="flex flex-col gap-[12px]">
+              {/* Contact Information */}
+              <p className="text-[#0a0a0a]" style={{ fontSize: "13px", fontWeight: 600, letterSpacing: "-0.13px" }}>
+                Contact Information
+              </p>
+              <Field label="Full Name">
+                <input type="text" id="name" name="name" value={form.name} onChange={handleChange}
+                  placeholder="Full name" required autoComplete="name" className={inputCls} style={inputSty} />
+              </Field>
+              <Field label="Phone Number">
+                <input type="tel" id="contact" name="contact" value={form.contact} onChange={handleChange}
+                  placeholder="(000) 000-0000" required autoComplete="tel" className={inputCls} style={inputSty} />
+              </Field>
+              <Field label="Email Address">
+                <input type="email" id="email" name="email" value={form.email} onChange={handleChange}
+                  placeholder="you@example.com" required autoComplete="email" className={inputCls} style={inputSty} />
+              </Field>
+
+              {/* Store Information */}
+              <p className="text-[#0a0a0a] mt-2" style={{ fontSize: "13px", fontWeight: 600, letterSpacing: "-0.13px" }}>
+                Store Information
+              </p>
+              <Field label="Number of Stores">
+                <select id="noOfStores" name="noOfStores" value={form.noOfStores} onChange={handleChange}
+                  required className={selectCls} style={selectSty}>
+                  <option value="" disabled>Select</option>
+                  {storeCountOptions.map((o) => <option key={o} value={o}>{o}</option>)}
+                </select>
+              </Field>
+              <Field label="Store Location (City, State)">
+                <input type="text" id="storeLocation" name="storeLocation" value={form.storeLocation} onChange={handleChange}
+                  placeholder="City, State" required autoComplete="address-level2" className={inputCls} style={inputSty} />
+              </Field>
+              <Field label="Primary Distributor">
+                <input type="text" id="primaryDistributor" name="primaryDistributor" value={form.primaryDistributor} onChange={handleChange}
+                  placeholder="e.g. Core-Mark, McLane" required autoComplete="off" className={inputCls} style={inputSty} />
+              </Field>
+              <Field label="Fuel Brand (optional)">
+                <select id="fuelBrand" name="fuelBrand" value={form.fuelBrand} onChange={handleChange}
+                  className={selectCls} style={selectSty}>
+                  <option value="">Select</option>
+                  {fuelOptions.map((o) => <option key={o} value={o}>{o}</option>)}
+                </select>
+              </Field>
+              <Field label="Approx. Store Size (Sq Ft) (optional)">
+                <select id="storeSalesArea" name="storeSalesArea" value={form.storeSalesArea} onChange={handleChange}
+                  className={selectCls} style={selectSty}>
+                  <option value="">Select</option>
+                  {salesAreaOptions.map((o) => <option key={o} value={o}>{o}</option>)}
+                </select>
+              </Field>
+
+              <div className="flex flex-col gap-[12px] mt-2">
                 <button
                   type="submit"
                   className="inline-flex items-center gap-2 border border-[#EA1528] text-[#EA1528] px-[25px] py-[13px] hover:bg-[#EA1528] hover:text-white transition-all cursor-pointer w-fit group"
@@ -306,13 +279,13 @@ function ContactCTASection() {
               letterSpacing: "-1.68px",
             }}
           >
-            Have a question first? We're happy to talk.
+            Have a question first?
           </h2>
           <p
             className="text-white"
             style={{ fontSize: "16px", fontWeight: 400, lineHeight: "23.8px", maxWidth: "616px" }}
           >
-            Not every store is ready to apply right away, and that's fine. Reach out and one of our team members will walk you through how PBD works with no pressure.
+            Talk to our team and we'll walk you through how PBD works.<br /><br />No pressure. Just a straightforward conversation.
           </p>
         </motion.div>
 
@@ -328,7 +301,7 @@ function ContactCTASection() {
             className="inline-flex items-center gap-2 bg-[#EA1528] border border-[#EA1528] text-white px-[25px] py-[13px] hover:bg-[#c8101f] hover:border-[#c8101f] transition-all duration-300 group whitespace-nowrap"
             style={{ fontSize: "14px", fontWeight: 500 }}
           >
-            Contact Us
+            Talk to Our Team
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
           </Link>
         </motion.div>
